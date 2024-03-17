@@ -1,6 +1,5 @@
 use clap::Parser;
 use crossterm::style::Stylize;
-use ctrlc;
 use inquire::CustomType;
 use regex::Regex;
 use std::io::Write;
@@ -74,11 +73,8 @@ fn match_regexp(re: Regex, test_string: &str, cap: bool) {
             );
             if cap {
                 for (j, capture) in captures.iter().skip(1).enumerate() {
-                    match capture {
-                        Some(capture) => {
+                    if let Some(capture) = capture {
                             println!("        {}) {}", j + 1, capture.as_str());
-                        }
-                        None => (),
                     }
                 }
             }
