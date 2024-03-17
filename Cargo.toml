@@ -3,6 +3,18 @@ name = "regexpr"
 version = "0.1.0"
 edition = "2021"
 
+[package.metadata.deb]
+maintainer = "Ronan Lawlor <ronanlawlor2001@gmail.com>"
+copyright =  "2024, Ronan Lawlor <ronanlawlor2001@gmail.com>"
+license-file = ["LICENSE", "4"]
+extended-description = """\
+    A commandline tool for testing regular expressions."""
+
+assets = [
+    ["target/release/regexpr", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/cargo-deb/README", "644"],
+]
+
 [dependencies]
 clap = { version = "4.5.3", features = ["derive"] }
 crossterm = "0.27.0"
