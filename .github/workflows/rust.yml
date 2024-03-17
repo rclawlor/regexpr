@@ -17,5 +17,4 @@ jobs:
         with:
           name: regexpr
           path: target/debian/regexpr_*.deb
-          if-no-files-found:
-            error: "Could not find .deb package output"
+          if-no-files-found: error
